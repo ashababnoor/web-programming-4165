@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,35 +8,41 @@
     <title>Flexbox!</title>
 
     <style>
-        :root {
+         :root {
             font-family: Arial, Helvetica, sans-serif;
             border-collapse: collapse;
         }
-        :root * {
+        
+         :root * {
             border: 1px solid red;
             border-collapse: collapse;
         }
+        
         .container {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
-            height: 90vh;
+            height: 50vh;
             align-items: flex-start;
         }
-        .box{
+        
+        .box {
             font-weight: bold;
             background-color: turquoise;
             margin: 0.3em;
             padding: 1em;
             /* border: 1px solid cyan; */
         }
-        .flex-grow{
+        
+        .flex-grow {
             flex-grow: 1;
         }
+        
         #title {
             flex-grow: 1;
         }
-        #search{
+        
+        #search {
             flex-grow: 3;
         }
     </style>
@@ -50,4 +57,5 @@
         <div class="box">Box 5</div>
     </div>
 </body>
+
 </html>
