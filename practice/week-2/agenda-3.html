@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda 3</title>
+
+    <style>
+        body{
+            background-color: white;
+            max-width: 700px;
+            margin: 2em auto;
+            box-shadow: 0 0 15px #bbb;
+        }
+        table {
+            text-align: left;
+        }
+        #second{
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: 2em 0;
+        }
+        td{
+            padding-left: 2em;
+        }
+        #second tr{
+            border-top: 2px solid grey;
+            padding: 1em;
+        }
+        #second tr:last-of-type{
+            border-bottom: 2px solid grey;
+        }
+        #second td{
+            margin: 0em;
+            padding: 0.7em 0.3em;
+            vertical-align: top;
+        }
+        .time {
+            font-size: 1em;
+            font-weight: bold;
+        }
+        .right-text{
+            text-align: right;
+        }
+        .time-cell {
+            max-width: max-content;
+        }
+        .first-ele {
+            display: block;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif; padding: 4em 3em; font-size: 1.2em;">
+    <h1 style="text-align: right; color: grey;">AGENDA</h1>
+    <h2>Meeting Title</h2>
+    <h3 style="margin-bottom: -10px;">Date</h3>
+    <h3>Start Time - End Time</h3>
+
+    <p>Meeting called by Facilliatator Name</p>
+    <table>
+        <tbody>
+            <tr>
+                <th>Attendees:</th>
+                <td>Attendees Names</td>
+            </tr>
+            <tr>
+                <th>Please read:</th>
+                <td>Reading List</td>
+            </tr>
+            <tr>
+                <th>Please bring:</th>
+                <td>Supply List</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table style="text-align: left; margin-top: 1em; width: 100%;" id="second">
+        <tbody>
+            <tr>
+                <td class="time-cell"> <span class="time">Start Time - End Time</span> </td>
+
+                <td> <strong class="first-ele">Introduction</strong> <br> Continental Breaskfasr <br> Topic  &nbsp; Speaker </td>
+                <td class="right-text"> Location </td>
+            </tr>
+            <tr>
+                <td> <span class="time">Start Time - End Time</span> </td>
+                <td> <strong class="first-ele">Item #1</strong> <br> Topic  &nbsp; Enter Topic </td>
+                <td class="right-text"> Location </td>
+            </tr>
+            <tr>
+                <td> <span class="time">Start Time - End Time</span> </td>
+                <td> <strong class="first-ele">Item #2</strong> <br> Topic  &nbsp; Enter Topic </td>
+                <td class="right-text"> Location </td>
+            </tr>
+            <tr>
+                <td> <span class="time">Start Time - End Time</span> </td>
+                <td> <strong class="first-ele">Item #3</strong> <br> Topic  &nbsp; Enter Topic </td>
+                <td class="right-text"> Location </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h4 style="margin-bottom: -10px;">Additional Instruction:</h4>
+    <p>Use this section for additional instructions, comments or directions.</p>
+</body>
+</html>
