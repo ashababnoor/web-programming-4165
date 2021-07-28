@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+    Ahmed Shabab Noor
+    Web Programming 4165(B)
+    Online 01
+    ID: 011 193 024
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online 1 - ID: 011 193 024</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        
+        body {
+            margin: 2em;
+        }
+        
+        .filter-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            color: #065fd4;
+            margin-bottom: 1.5em;
+        }
+        
+        .filter-div .filter-title {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .filter-icon {
+            height: 2.2rem;
+        }
+        
+        .col-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* gap: 2em; */
+            /* Not sure if gap is supported in all browsers */
+        }
+        
+        .col-div .col {
+            width: 100%;
+            margin: 0 2em;
+        }
+        
+        .col:first-of-type {
+            margin-left: 0em;
+        }
+        
+        .col:last-of-type {
+            margin-right: 0em;
+        }
+        
+        .col * {
+            padding: 0.5em 0;
+        }
+        
+        .title {
+            font-weight: bold;
+            color: black;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 1em;
+            margin-bottom: 0.5em;
+        }
+        
+        .text {
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="filter-div">
+        <img src="filter.png" alt="filter" class="filter-icon">
+        <div class="filter-title"> FILTERS </div>
+    </div>
+
+    <div class="col-div">
+        <div class="col">
+            <div class="title">UPLOAD DATE</div>
+            <div class="text">Last Hour</div>
+            <div class="text">Today</div>
+            <div class="text">This week</div>
+            <div class="text">This month</div>
+            <div class="text">This year</div>
+        </div>
+        <div class="col">
+            <div class="title">TYPE</div>
+            <div class="text">Video</div>
+            <div class="text">Channel</div>
+            <div class="text">Playlist</div>
+            <div class="text">Movie</div>
+        </div>
+        <div class="col">
+            <div class="title">DURATION</div>
+            <div class="text">Under 4 minutes</div>
+            <div class="text">4 - 20 minutes</div>
+            <div class="text">Over 20 minutes</div>
+        </div>
+        <div class="col">
+            <div class="title">FEATURES</div>
+            <div class="text">Live</div>
+            <div class="text">4K</div>
+            <div class="text">HD</div>
+            <div class="text">Subtitles/CC</div>
+            <div class="text">Creative Commons</div>
+        </div>
+    </div>
+</body>
+
+</html>
