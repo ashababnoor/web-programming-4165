@@ -24,7 +24,7 @@
 }
 
 .container {
-    margin: 2em auto;
+    margin: 3em auto;
     width: 85em;
     box-shadow: 0 0 1em var(--gh-grey-border);
 }
@@ -290,7 +290,7 @@
     margin-top: 1.8em;
     display: block;
     font-size: 0.9em;
-    color: var(--gh-icon-clr);
+    color: var(--gh-text-clr-drk);
 }
 
 .readme i {
