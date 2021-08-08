@@ -6,13 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Semantic UI CDN -->
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 
     <title>Document</title>
+
+    <style>
+        body {
+            margin: 2em;
+        }
+        
+        .container {
+            margin-bottom: 1em;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Testing JavaScript</h1>
+    <div class="ui container">
+        <div class="ui divider"></div>
+        <h1>Testing JavaScript</h1>
+        <button class="ui button" id="btn">Button</button>
+        <button class="ui primary button">Primary</button>
+        <button class="ui secondary button">Secondary</button>
+
+    </div>
+
+    <script type="text/javascript">
+        console.log("Hello world!");
+        document.write('<h2>Hello world!</h2>');
+        document.write('<code>Previous line added with javascript.</code>');
+    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
