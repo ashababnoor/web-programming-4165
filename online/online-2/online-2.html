@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+    Ahmed Shabab Noor
+    ID: 011 193 024
+    Web Programming 4165(B)
+    Online 02
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online 2 - 011 193 024</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        //Taking inputs
+        let a = Number(prompt('Enter 1st number:'));
+        let b = Number(prompt('Enter 2nd number:'));
+        let c = Number(prompt('Enter 3rd number:'));
+
+        let secondLargest;
+
+        //Finding out the second largest number
+
+        if (a >= b && a >= c) {
+            //console.log('Inside first condition');
+
+            if (b >= c) {
+                secondLargest = b;
+            } else {
+                secondLargest = c;
+            }
+        } else if (b >= a && b >= c) {
+            //console.log('Inside second condition');
+
+            if (a >= c) {
+                secondLargest = a;
+            } else {
+                secondLargest = c;
+            }
+        } else {
+            //console.log('Inside else');
+
+            if (a >= b) {
+                secondLargest = a;
+            } else {
+                secondLargest = b;
+            }
+        }
+
+        //Outputting the number on the console.
+
+        console.log(secondLargest);
+        //document.write(secondLargest);
+    </script>
+</body>
+
+</html>
