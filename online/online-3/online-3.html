@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+    Ahmed Shabab Noor
+    ID: 011 193 024
+    Web Programming 4165(B)
+    Online 03
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online 3 - 011 193 024</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        let text = prompt('Enter a sentence:');
+
+        //removing commas and splitting the string array
+        let text_elements = text.replace(',', '').split(" ");
+
+        //console.log('Input sentence elements:', text_elements);
+        //document.write('Input sentence elements:', text_elements, '<br>');
+
+        //Only taking the numbers
+        let numbersFromText = text_elements.filter(x => !isNaN(x));
+
+        let numString = "";
+
+        numbersFromText.forEach(x => numString += x + ', ');
+
+        console.log('Numbers inside the input sentence:', numString);
+        document.write('Numbers inside the input sentence:', numString);
+    </script>
+</body>
+
+</html>
