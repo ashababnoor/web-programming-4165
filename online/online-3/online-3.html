@@ -21,7 +21,10 @@
         let text = prompt('Enter a sentence:');
 
         //removing commas and splitting the string array
-        let text_elements = text.replace(',', '').split(" ");
+        let text_elements = text.split(" ").map(
+            x => x.replace('\,*\\', '')
+            //regex for removing any number of commas
+        );
 
         //console.log('Input sentence elements:', text_elements);
         //document.write('Input sentence elements:', text_elements, '<br>');
