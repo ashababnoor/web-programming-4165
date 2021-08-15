@@ -1,0 +1,8 @@
+:root {
+    font-size: 16px;
+}
+
+.container {
+    margin: 2em auto;
+    display: flex;
+}

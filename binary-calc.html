@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            width: 33%;
+        }
+        
+        #res {
+            background-color: lightgray;
+            height: 48px;
+            font-size: 20px;
+            border-style: solid;
+        }
+        
+        #btn0,
+        #btn1 {
+            background-color: lightgreen;
+            color: brown;
+        }
+        
+        #btnClr,
+        #btnEql {
+            color: white;
+            background-color: darkgreen;
+        }
+        
+        #btnSum,
+        #btnSub,
+        #btnMul,
+        #btnDiv {
+            background-color: black;
+            color: red;
+        }
+        
+        #btns button {
+            width: 25%;
+            height: 36px;
+            font-size: 18px;
+            margin: 0px;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="res">
+
+    </div>
+    <div id="btns">
+        <button id="btn0"> 0 </button>
+        <button id="btn1"> 1 </button>
+        <button id="btnClr"> C </button>
+        <button id="btnEql"> = </button>
+        <button id="btnSum"> + </button>
+        <button id="btnSub"> - </button>
+        <button id="btnMul"> * </button>
+        <button id="btnDiv"> / </button>
+    </div>
+
+    <script>
+        let op1 = ""
+        let op2 = ""
+        let opr = ''
+        let trk = 0
+
+        let addText = event => {
+            let element = event.target
+            let btn = document.getElementById(element.id + "")
+            let text = (btn.innerHTML).replace(/\s/g, "")
+            document.getElementById('res').innerHTML += text
+            return text
+        }
+
+        let returnText = event => {
+            let element = event.target
+            let btn = document.getElementById(element.id + "")
+            return Number(btn.innerHTML)
+        }
+
+        let zero = document.getElementById('btn0')
+        let one = document.getElementById('btn1')
+        let plus = document.getElementById('btnSum')
+        let sub = document.getElementById('btnSub')
+        let mult = document.getElementById('btnMul')
+        let div = document.getElementById('btnDiv')
+        let res = document.getElementById('res')
+        let clr = document.getElementById('btnClr')
+        let eq = document.getElementById('btnEql')
+
+        zero.addEventListener('click', event => {
+            addText(event)
+            let str = returnText(event)
+            if (trk === 0) {
+                op1 += str
+            } else {
+                op2 += str
+            }
+            console.log('clicked on', str)
+            console.log('Op1:', op1, op1.length)
+            console.log('Op2:', op2, op2.length)
+        })
+
+        one.addEventListener('click', event => {
+            addText(event)
+            let str = returnText(event)
+            if (trk === 0) {
+                op1 += str
+            } else {
+                op2 += str
+            }
+            console.log('clicked on', str)
+            console.log('Op1:', op1, op1.length)
+            console.log('Op2:', op2, op2.length)
+        })
+
+        function clearEve() {
+            op1 = ''
+            op2 = ''
+            opr = ''
+            trk = 0
+            res.innerHTML = ''
+        }
+
+        plus.addEventListener('click', event => {
+            let text = addText(event)
+            if (trk === 0) {
+                opr = text
+                console.log('Operand:', text)
+                trk = 1
+            } else {
+                clearEve()
+                console.log('Multiple operand on same expression not allowed')
+            }
+        })
+
+        sub.addEventListener('click', event => {
+            let text = addText(event)
+            if (trk === 0) {
+                opr = text
+                console.log('Operand:', text)
+                trk = 1
+            } else {
+                clearEve()
+                console.log('Multiple operand on same expression not allowed')
+            }
+        })
+
+        mult.addEventListener('click', event => {
+            let text = addText(event)
+            if (trk === 0) {
+                opr = text
+                console.log('Operand:', text)
+                trk = 1
+            } else {
+                clearEve()
+                console.log('Multiple operand on same expression not allowed')
+            }
+        })
+
+        div.addEventListener('click', event => {
+            let text = addText(event)
+            if (trk === 0) {
+                opr = text
+                console.log('Operand:', text)
+                trk = 1
+            } else {
+                clearEve()
+                console.log('Multiple operand on same expression not allowed')
+            }
+        })
+
+        clr.addEventListener('click', event => {
+            clearEve()
+        })
+
+        eq.addEventListener('click', event => {
+            let num1 = parseInt(op1, 2)
+            if (op2 == '') {
+                console.log('Only one number clicke:', op1)
+                clearEve()
+                res.innerHTML = num1.toString(2)
+                op1 = num1.toString(2)
+                return
+            }
+            let num2 = parseInt(op2, 2)
+            console.log('Num1:', num1, "Num2:", num2)
+
+            let result
+
+            if (opr == '+') {
+                result = num1 + num2
+            } else if (opr == '-') {
+                result = num1 - num2
+            } else if (opr == '*') {
+                result = num1 * num2
+            } else if (opr == '/') {
+                result = num1 / num2
+            }
+
+            console.log('result:', result)
+
+            clearEve()
+            res.innerHTML = result.toString(2)
+            op1 = result.toString(2)
+        })
+    </script>
+</body>
+
+</html>
