@@ -1,8 +1,238 @@
 :root {
     font-size: 16px;
+    font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --clr-blue: #1A91DA;
+    --clr-blue-light: #1DA1F2;
+    --clr-black: #0F1419;
+    --clr-grey: #536471;
+    --clr-grey-bg: #e6ecf0;
+    color: var(--clr-black);
 }
 
 .container {
     margin: 2em auto;
     display: flex;
+    gap: 4em;
+    padding-inline: 8em;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: column;
+    width: max(20%, 250px);
+}
+
+.tweets-col {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.right-col {
+    display: flex;
+    flex-direction: column;
+    width: max(30%, 300px);
+    gap: 1em;
+}
+
+.menu-items {
+    display: flex;
+}
+
+.twitter-icon {
+    color: var(--clr-blue);
+    font-size: 1.6rem;
+}
+
+.side-menu .icon-div {
+    margin-inline: 0.8em;
+    font-size: 1.4em;
+    font-weight: bold;
+    stroke-width: 2px;
+}
+
+.side-menu .text-div {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--clr-black);
+    flex-grow: 1;
+}
+
+.side-menu .menu-items {
+    margin-block: 0.8em;
+}
+
+.side-menu-btn {
+    color: white;
+    background: var(--clr-blue);
+    border-radius: 2em;
+    border: none;
+    padding: 1em 3em;
+    width: 80%;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.tweets-col .header {
+    display: flex;
+    margin-bottom: 1.8rem;
+}
+
+.header .icon-div {
+    margin-inline: 0.2em;
+    font-size: 1.4em;
+    font-weight: bold;
+    stroke-width: 2px;
+    color: var(--clr-blue);
+    fill: var(--clr-blue);
+}
+
+.header .text-div {
+    font-size: 1.4em;
+    margin-left: 0.3em;
+    font-weight: bold;
+}
+
+.tweets-col .tweet-div {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-div {
+    display: flex;
+    align-content: center;
+}
+
+.name-div {
+    flex-grow: 1;
+}
+
+.user-name {
+    font-weight: bold;
+}
+
+.profile-pic-div img {
+    width: 2.5em;
+    height: 2.5em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 0.8em;
+}
+
+.subtitle {
+    color: var(--clr-grey);
+}
+
+.link {
+    color: var(--clr-blue-light);
+    font-weight: 500;
+}
+
+.tweet-body {
+    font-size: 1.1em;
+    margin-block: 0.7em;
+}
+
+.tweet-info {
+    font-size: 0.85em;
+}
+
+.search-div {
+    background: var(--clr-grey-bg);
+    padding: 0.5em 1em;
+    border-radius: 2em;
+}
+
+.search-div i {
+    color: var(--clr-grey);
+}
+
+.search-field,
+.search-field:focus {
+    margin-left: 0.2em;
+    border: none;
+    border-color: transparent;
+    background: transparent;
+    outline: none;
+}
+
+.search-field::placeholder {
+    color: var(--clr-grey);
+}
+
+.relevant-div {
+    border: 1px solid #d1d1d1;
+    border-radius: 1em;
+}
+
+.section-header {
+    padding: 1em;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.section-body {
+    padding: 1em;
+    display: flex;
+}
+
+.section-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.bi-gear {
+    color: var(--clr-blue);
+    font-size: 1.3em;
+}
+
+.trends-div {
+    background: var(--clr-grey-bg);
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.trends-div .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.trends-div .section-body {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.section-footer {
+    padding: 1em;
+}
+
+.pill {
+    display: flex;
+    border-radius: 1em;
+    border: 1px solid #d1d1d1;
+    font-size: 0.9em;
+    height: 6em;
+}
+
+.pill .text-div {
+    padding: 1em;
+}
+
+.pill .img-div img {
+    height: 6em;
 }

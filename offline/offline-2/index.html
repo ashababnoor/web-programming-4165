@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- 
+    Ahmed Shabab Noor
+    Web Programming 4165
+    Section B
+    ID: 011 193 024
+-->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- Feather icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Fontawesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Bootstrap 5 icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 
     <link rel="stylesheet" href="style.css">
 
@@ -13,7 +29,236 @@
 
 <body>
     <div class="container">
+        <div class="side-menu">
+            <div class="menu-items">
+                <div class="icon-div twitter-icon">
+                    <i class="bi bi-twitter"></i>
+                </div>
+            </div>
 
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-house-door"></i>
+                </div>
+                <div class="text-div">
+                    Home
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-hash"></i>
+                </div>
+                <div class="text-div">
+                    Explore
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-bell"></i>
+                </div>
+                <div class="text-div">
+                    Notifications
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <div class="text-div">
+                    Messages
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-bookmark"></i>
+                </div>
+                <div class="text-div">
+                    Bookmarks
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-card-text"></i>
+                </div>
+                <div class="text-div">
+                    Channels
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-person"></i>
+                </div>
+                <div class="text-div">
+                    Profile
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <div class="icon-div">
+                    <i class="bi bi-three-dots"></i>
+                </div>
+                <div class="text-div">
+                    More
+                </div>
+            </div>
+
+            <div class="menu-items">
+                <button class="side-menu-btn">Tweet</button>
+            </div>
+        </div>
+        <div class="tweets-col">
+            <div class="header">
+                <div class="icon-div">
+                    <i class="bi bi-arrow-left"></i>
+                </div>
+                <div class="text-div">
+                    <span class="section-title">
+                        Tweet
+                    </span>
+                </div>
+            </div>
+
+            <div class="tweet-div">
+                <div class="user-div">
+                    <div class="profile-pic-div">
+                        <img src="https://picsum.photos/id/1025/4951/3301" alt="Profie Pic" srcset="">
+                    </div>
+                    <div class="name-div">
+                        <span class="user-name"> Jane Manchun Wong </span>
+                        <br>
+                        <span class="subtitle"> @wongmjane </span>
+                    </div>
+                    <div class="drop">
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="tweet-text-div">
+                    <div class="tweet-body">
+                        Twitter is working on docked DM window for web app
+                    </div>
+                    <div class="tweet-info">
+                        <span class="subtitle"> 2:37 AM &bullet; Apr 15, 2020 &bullet; </span>
+                        <span class="link"> Twitter Web App </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-col">
+            <div class="search-div">
+                <i class="bi bi-search"></i>
+                <input type="text" class="search-field" placeholder="Search Twitter">
+            </div>
+
+            <div class="relevant-div">
+                <div class="section-header">
+                    <span class="section-title">
+                        Relevant people
+                    </span>
+                </div>
+                <div class="section-body">
+                    <div class="profile-pic-div">
+                        <img src="https://picsum.photos/id/1025/4951/3301" alt="Profie Pic" srcset="">
+                    </div>
+                    <div class="name-div">
+                        <span class="user-name"> Jane Manchun Wong </span>
+                        <br>
+                        <span class="subtitle"> @wongmjane </span>
+                        <br>
+                        <p> Reverse-engineering apps for hidden features and security vulnerabilities </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trends-div">
+                <div class="section-header">
+                    <span class="section-title">
+                        Trends for you
+                    </span>
+
+                    <i class="bi bi-gear"></i>
+                </div>
+
+                <div class="section-body">
+                    <div class="top subtitle">
+                        <span class="small"> Politics &bullet; Trending </span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <span class="bold">Liberate the USA</span>
+                    <span class="subtitle"> 7,736 Tweets </span>
+                    <br>
+                    <div class="pill">
+                        <div class="text-div">
+                            <span class="subtitle">
+                                COVID-19
+                            </span> <br> Trump calls for three states to be liberated from COVID-19 ...
+                        </div>
+                        <div class="img-div">
+                            <img src="https://picsum.photos/200" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-body">
+                    <div class="top subtitle">
+                        <span class="small"> Trending in United States </span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <span class="bold">#CashAppCodeGreen</span>
+                    <span class="subtitle"> 2,300 Tweets </span>
+                </div>
+
+                <div class="section-body">
+                    <div class="top subtitle">
+                        <span class="small"> Trending in United States </span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <span class="bold">Huntington Beach</span>
+                    <span class="subtitle"> 1,689 Tweets </span>
+                </div>
+
+                <div class="section-body">
+                    <div class="top subtitle">
+                        <span class="small"> Entertainment &bullet; Trending </span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <span class="bold">#CashAppDerby</span>
+                    <span class="subtitle"> Trending with: Carmella's Dream </span>
+                </div>
+
+                <div class="section-body">
+                    <div class="top subtitle">
+                        <span class="small"> Trending in United States </span>
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <span class="bold"> Mr. Phill </span>
+                    <span class="subtitle"> 13.5K Tweets </span>
+                    <br>
+                    <div class="pill">
+                        <div class="text-div">
+                            <span class="subtitle">
+                                COVID-19
+                            </span> <br> Dr. Phill's remarks about COVID-19 deaths in the US are put ...
+                        </div>
+                        <div class="img-div">
+                            <img src="https://picsum.photos/200" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <span class="link">
+                        Show more
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
