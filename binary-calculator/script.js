@@ -168,3 +168,5 @@ eq.addEventListener('click', event => {
     res.innerHTML = result.toString(2)
     op1 = result.toString(2)
 })
+
+//nothing
