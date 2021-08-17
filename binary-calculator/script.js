@@ -23,11 +23,14 @@ let eq = document.getElementById('btnEql')
 let addText = event => {
     if (errorMessages.includes(res.innerHTML)) {
         res.innerHTML = ''
+        console.log('error was encountered')
     }
 
-    if (counter > 17) {
+    if (counter >= 17) {
         clearEve()
         res.innerHTML = errorMessages[1]
+        console.log('max length exceeded')
+        return
     }
 
     let element = event.target
@@ -36,7 +39,8 @@ let addText = event => {
 
     document.getElementById('res').innerHTML += text
 
-    counter++
+    counter = res.innerHTML.length
+    console.log('counter:', counter)
 
     return text
 }
@@ -71,6 +75,12 @@ let operatorFunc = event => {
 
 let operandFunc = event => {
     addText(event)
+
+    if (errorMessages.includes(res.innerHTML)) {
+        console.log('error was encountered, skipping this turn')
+        return
+    }
+
     let str = returnText(event)
     if (trk === 0) {
         op1 += str
