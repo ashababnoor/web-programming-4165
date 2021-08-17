@@ -21,6 +21,10 @@ let clr = document.getElementById('btnClr')
 let eq = document.getElementById('btnEql')
 
 let addText = event => {
+    if (op1 === '' && opr === '') {
+        clearEve()
+    }
+
     if (errorMessages.includes(res.innerHTML)) {
         res.innerHTML = ''
         console.log('error was encountered')
