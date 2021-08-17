@@ -8,15 +8,24 @@
     <title>Document</title>
 
     <style>
-        body {
-            width: 33%;
+        .container {
+            width: min(20em, 100%);
+            margin: 2em auto;
+        }
+        
+        .container h1 {
+            text-align: center;
+            color: darkgreen;
+            text-shadow: 0 0 3px darkgreen;
         }
         
         #res {
             background-color: lightgray;
-            height: 48px;
             font-size: 20px;
+            height: 1em;
             border-style: solid;
+            vertical-align: middle;
+            padding: 0.7em;
         }
         
         #btn0,
@@ -45,24 +54,32 @@
             font-size: 18px;
             margin: 0px;
             float: left;
+            font-weight: 500;
+        }
+        
+        .red {
+            color: red;
         }
     </style>
 </head>
 
 <body>
+    <div class="container">
+        <h1> <code>Binary Calculator</code></h1>
 
-    <div id="res">
+        <div id="res">
 
-    </div>
-    <div id="btns">
-        <button id="btn0"> 0 </button>
-        <button id="btn1"> 1 </button>
-        <button id="btnClr"> C </button>
-        <button id="btnEql"> = </button>
-        <button id="btnSum"> + </button>
-        <button id="btnSub"> - </button>
-        <button id="btnMul"> * </button>
-        <button id="btnDiv"> / </button>
+        </div>
+        <div id="btns">
+            <button id="btn0"> 0 </button>
+            <button id="btn1"> 1 </button>
+            <button id="btnClr"> C </button>
+            <button id="btnEql"> = </button>
+            <button id="btnSum"> + </button>
+            <button id="btnSub"> - </button>
+            <button id="btnMul"> * </button>
+            <button id="btnDiv"> / </button>
+        </div>
     </div>
 
     <script>
@@ -71,19 +88,12 @@
         let opr = ''
         let trk = 0
 
-        let addText = event => {
-            let element = event.target
-            let btn = document.getElementById(element.id + "")
-            let text = (btn.innerHTML).replace(/\s/g, "")
-            document.getElementById('res').innerHTML += text
-            return text
-        }
+        let counter = 0
 
-        let returnText = event => {
-            let element = event.target
-            let btn = document.getElementById(element.id + "")
-            return Number(btn.innerHTML)
-        }
+        let errorMessages = [
+            '<span class="red"> Expression error! </span>',
+            '<span class="red"> Too large expression! </span>'
+        ]
 
         let zero = document.getElementById('btn0')
         let one = document.getElementById('btn1')
@@ -95,41 +105,43 @@
         let clr = document.getElementById('btnClr')
         let eq = document.getElementById('btnEql')
 
-        zero.addEventListener('click', event => {
-            addText(event)
-            let str = returnText(event)
-            if (trk === 0) {
-                op1 += str
-            } else {
-                op2 += str
+        let addText = event => {
+            if (errorMessages.includes(res.innerHTML)) {
+                res.innerHTML = ''
             }
-            console.log('clicked on', str)
-            console.log('Op1:', op1, op1.length)
-            console.log('Op2:', op2, op2.length)
-        })
 
-        one.addEventListener('click', event => {
-            addText(event)
-            let str = returnText(event)
-            if (trk === 0) {
-                op1 += str
-            } else {
-                op2 += str
+            if (counter > 17) {
+                clearEve()
+                res.innerHTML = errorMessages[1]
             }
-            console.log('clicked on', str)
-            console.log('Op1:', op1, op1.length)
-            console.log('Op2:', op2, op2.length)
-        })
 
-        function clearEve() {
+            let element = event.target
+            let btn = document.getElementById(element.id + "")
+            let text = (btn.innerHTML).replace(/\s/g, "")
+
+            document.getElementById('res').innerHTML += text
+
+            counter++
+
+            return text
+        }
+
+        let returnText = event => {
+            let element = event.target
+            let btn = document.getElementById(element.id + "")
+            return Number(btn.innerHTML)
+        }
+
+        let clearEve = () => {
             op1 = ''
             op2 = ''
             opr = ''
             trk = 0
+            counter = 0
             res.innerHTML = ''
         }
 
-        plus.addEventListener('click', event => {
+        let operatorFunc = event => {
             let text = addText(event)
             if (trk === 0) {
                 opr = text
@@ -138,62 +150,78 @@
             } else {
                 clearEve()
                 console.log('Multiple operand on same expression not allowed')
+                res.innerHTML = errorMessages[0]
             }
+        }
+
+        let operandFunc = event => {
+            addText(event)
+            let str = returnText(event)
+            if (trk === 0) {
+                op1 += str
+            } else {
+                op2 += str
+            }
+            console.log('clicked on', str)
+            console.log('Op1:', op1, op1.length)
+            console.log('Op2:', op2, op2.length)
+        }
+
+        zero.addEventListener('click', event => {
+            operandFunc(event)
+        })
+
+        one.addEventListener('click', event => {
+            operandFunc(event)
+        })
+
+        plus.addEventListener('click', event => {
+            operatorFunc(event)
         })
 
         sub.addEventListener('click', event => {
-            let text = addText(event)
-            if (trk === 0) {
-                opr = text
-                console.log('Operand:', text)
-                trk = 1
-            } else {
-                clearEve()
-                console.log('Multiple operand on same expression not allowed')
-            }
+            operatorFunc(event)
         })
 
         mult.addEventListener('click', event => {
-            let text = addText(event)
-            if (trk === 0) {
-                opr = text
-                console.log('Operand:', text)
-                trk = 1
-            } else {
-                clearEve()
-                console.log('Multiple operand on same expression not allowed')
-            }
+            operatorFunc(event)
         })
 
         div.addEventListener('click', event => {
-            let text = addText(event)
-            if (trk === 0) {
-                opr = text
-                console.log('Operand:', text)
-                trk = 1
-            } else {
-                clearEve()
-                console.log('Multiple operand on same expression not allowed')
-            }
+            operatorFunc(event)
         })
 
-        clr.addEventListener('click', event => {
-            clearEve()
-        })
+        clr.addEventListener('click', clearEve)
 
         eq.addEventListener('click', event => {
-            let num1 = parseInt(op1, 2)
-            if (op2 == '') {
-                console.log('Only one number clicke:', op1)
+            let num1
+            let num2
+            let result
+
+            if (op1 === '' && opr !== '') {
+                clearEve()
+                console.log('Operand 1 can\' be empty')
+                res.innerHTML = '<span class="red"> Expression error! </span>'
+                return
+            } else if (op1 === '' && opr === '') {
+                clearEve()
+                return
+            } else {
+                num1 = parseInt(op1, 2)
+            }
+
+            if (op2 === '') {
+                console.log('Only one number clicked:', op1)
                 clearEve()
                 res.innerHTML = num1.toString(2)
                 op1 = num1.toString(2)
+                res.innerHTML = op1
                 return
+            } else {
+                num2 = parseInt(op2, 2)
             }
-            let num2 = parseInt(op2, 2)
-            console.log('Num1:', num1, "Num2:", num2)
 
-            let result
+            console.log('Num1:', num1, "Num2:", num2)
 
             if (opr == '+') {
                 result = num1 + num2
