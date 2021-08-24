@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!-- 
+    Ahmed Shabab Noor
+    ID: 011 193 024
+    Web Programming CSE 4165(B)
+    Mid Term Exam
+-->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid Term Exam</title>
+</head>
+
+<body>
+    <div>
+        <label for="textbox">Input: </label>
+        <input type="text" id="textbox">
+        <button id="btn">Process input</button>
+    </div>
+    <div>
+        <h1>Small Words</h1>
+        <p id="p1"></p>
+    </div>
+    <div>
+        <h1>Big Words</h1>
+        <p id="p2"></p>
+    </div>
+
+    <script></script>
+    <script>
+        let words = [];
+
+        const btn = document.querySelector("#btn");
+        const p1 = document.querySelector("#p1");
+        const p2 = document.querySelector("#p2");
+        const textbox = document.querySelector("#textbox");
+
+        btn.addEventListener('click', () => {
+            let str = textbox.value;
+            words = str.split(",");
+
+            words.forEach(word => {
+                if (word.length < 6) {
+                    //no comma for first element
+                    if (p1.innerHTML == "") {
+                        p1.innerHTML = word;
+                    } else {
+                        p1.innerHTML += ", " + word;
+                    }
+                } else {
+                    //no comma for first element
+                    if (p2.innerHTML == "") {
+                        p2.innerHTML = word;
+                    } else {
+                        p2.innerHTML += ", " + word;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <div>
+        <label>Task:</label>
+        <input id="task_input">
+        <button id="insert_button">Insert Task</button>
+    </div>
+    <div>
+        <h3>Task List</h3>
+        <ol id="task_list">
+            <p>Please add a new item</p>
+        </ol>
+    </div>
+
+    <table>
+        <thead>
+            <th>Ser</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Mr A</td>
+                <td>20</td>
+                <td>10000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Mr B</td>
+                <td>25</td>
+                <td>20000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mr C</td>
+                <td>23</td>
+                <td>15000</td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        let tasks = [];
+
+        const txtTask = document.querySelector('#task_input');
+        const btnInsert = document.querySelector('#insert_button');
+        const lstTask = document.querySelector('#task_list');
+
+        function refresh_list() {
+            lstTask.innerHTML = tasks.map(arg => {
+                return `
+				<li>
+					<span>${arg}</span>
+					<div>
+						<button class="edit_button">Edit</button>
+						<button class="delete_button">Delete</button>
+					</div> 
+				</li>`;
+            }).join('');
+            attach_operations();
+        }
+
+        btnInsert.addEventListener('click', () => {
+            tasks.push(txtTask.value);
+
+            refresh_list();
+
+            txtTask.value = '';
+            txtTask.focus();
+        })
+
+        function attach_operations() {
+            document.querySelectorAll('.edit_button').forEach(arg => {
+                arg.addEventListener('click', (e) => {
+                    let cur_task = e.target.parentNode.previousElementSibling.innerHTML;
+                    let new_value = prompt('Please enter the new value', cur_task);
+                    if (new_value != undefined) {
+                        // tasks = tasks.map(arg => {
+                        // 	if (arg == cur_task)
+                        // 		return new_value;
+                        // 	else 
+                        // 		return arg;
+                        // });
+                        tasks = tasks.map(arg => arg == cur_task ? new_value : arg); //same thing
+                        refresh_list();
+                    }
+                });
+            });
+
+            document.querySelectorAll('.delete_button').forEach(arg => {
+                arg.addEventListener('click', (e) => {
+                    let cur_task = e.target.parentNode.previousElementSibling.innerHTML;
+                    if (confirm(`Are you sure you want to delete ${cur_task}?`)) {
+                        tasks = tasks.filter(arg => arg != cur_task);
+                        refresh_list();
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>
