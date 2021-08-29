@@ -1,15 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title></title>
 </head>
 
 <body>
 
+    <script type="text/javascript">
+        let a = "Hello World";
+        // console.log(a.length);
+        let arr = [10, 20, 30, 'a', 'b', 'c'];
+        let arr2 = [10, 40, 20, 30, 50];
+        // for (let i = 0; i < arr.length; i++)
+        // 	console.log(arr[i]);
+
+        // function apply_logic(n)
+        // {
+        // 	n = n + 2;
+        // 	// console.log(n);
+        // 	return n;
+        // }
+
+        // // for (let item of arr)
+        // // {
+        // // 	console.log(item);
+        // // }
+
+        // let arr3 = [];
+
+        // for (let item of arr2)
+        // {
+        // 	let m = apply_logic(item);
+        // 	arr3.push(m);
+        // }
+
+        // console.log(arr3);
+        console.log(arr2);
+        let blacklist = [30, 40];
+
+        // let arr3 = arr2.map((n) => n - 5);
+        // let arr4 = arr2.filter((arg) => 
+        // 	{ return arg > 25; });
+
+        let arr5 = arr2.filter((arg) => {
+            if (blacklist.includes(arg))
+                return false;
+            else
+                return true;
+        });
+
+        let arr6 = arr2.filter((arg) => {
+            if (arg == 20)
+                return true;
+            else
+                return false;
+        });
+
+        // arr2.forEach((arg) => {
+        // 	console.log('The content of arr2 is ' + arg);
+        // });
+
+        // let ret = arr2.every((arg) => arg < 200);
+        // console.log(ret);
+
+        //Prob-3 - String
+        let name = "Ahmed Shabab Noor";
+        let words = name.split(' ');
+        let abbr = words.map((arg) => {
+            return arg[0] + '.';
+        });
+
+        console.log(abbr.join(''));
+    </script>
 </body>
 
 </html>
