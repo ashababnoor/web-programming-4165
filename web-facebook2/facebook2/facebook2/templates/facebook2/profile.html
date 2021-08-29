@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+    <link rel="stylesheet" href="{% static 'facebook2/style.css' %}">
+</head>
+
+<body>
+    <h1>Welcome to the profile of Mr. Shabab</h1>
+    <h3>30th August, 2021</h3>
+    <br>
+
+    <h2>
+        <a href="{% url 'home-page' %}"> Go to home page </a>
+    </h2>
+
+    {% for post in posts %}
+
+    <div class="post">
+        <div>
+            <h4> {{ post.content }} </h4>
+        </div>
+        <div>
+            <h5> {{ post.author }} | {{ post.date }} </h5>
+        </div>
+        <div>
+            <h6>
+                {% for tag in post.tags %}
+                <span class="tag"> {{ tag }} </span> {% endfor %}
+            </h6>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

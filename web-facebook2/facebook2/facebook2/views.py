@@ -9,7 +9,7 @@ def home(request):
     <p> This is a paragraph</p>
 
     '''
-    #return HttpResponse(homepage + '<p>' + str(dir(request.get_host())) + '</p>')
+    # return HttpResponse(homepage + '<p>' + str(dir(request.get_host())) + '</p>')
 
     context = {
         'username': 'Shabab'
@@ -27,7 +27,34 @@ def profile(request):
     My name is Ahmed Shabab Noor </p>
 
     '''
-    return HttpResponse(profilepage)
+
+    postlist = [
+        {
+            'content': 'Hello this is the first post',
+            'author': 'Shabab Noor',
+            'date': '30/08/21',
+            'tags': ['fun', 'exciting']
+        },
+        {
+            'content': 'Oh hi! This is the second post',
+            'author': 'Mr. Noor',
+            'date': '31/08/21',
+            'tags': ['fun', 'exciting', 'old']
+        },
+        {
+            'content': 'This is just another post',
+            'author': 'Random User',
+            'date': '31/08/21',
+            'tags': ['meh', 'boring', 'old']
+        }
+    ]
+
+    context = {
+        'posts': postlist
+    }
+
+    # return HttpResponse(profilepage)
+    return render(request, 'facebook2/profile.html', context)
 
 def article(request, id=1):
     articlepage = '<h1> Showing you article ' + str(id) + ' </h1>'

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
 
-    <style>
-        h1 {
-            color: blueviolet;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'facebook2/style.css' %}">
 </head>
 
 <body>
@@ -20,7 +18,7 @@
     <h3>Section: B</h3>
     <h3>Dept: CSE</h3>
 
-    <h5><a href="{% url 'home-page' %}">Click here to go to home page</a></h5>
+    <h2><a href="{% url 'home-page' %}">Click here to go to home page</a></h2>
 </body>
 
 </html>

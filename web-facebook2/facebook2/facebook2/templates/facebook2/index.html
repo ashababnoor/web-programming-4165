@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="{% static 'facebook2/style.css' %}">
 </head>
 
 <body>
     <h1>Welcome from templates, Mr. {{ username }}!</h1>
-    <p>This was generated directly from HTML</p>
+    <h3>This was generated directly from HTML</h3>
 
-    <h4><a href="{% url 'about-page' %}">Click here to go to about page</a></h4>
+    <br>
+
+    <h2><a href="{% url 'about-page' %}">Click here to go to about page</a></h2>
+    <h2><a href="{% url 'profile-page' %}">Click here to go to profile page</a></h2>
+
 </body>
 
 </html>
