@@ -1,0 +1,8 @@
+<form method="POST" action="{% url 'bookappt' %}">
+    {% csrf_token %}
+
+    <input type="date" name="pref_date">
+    <input type="text" name="doctor_name" placeholder="Doctor's name">
+    <input type="text" name="patient_name" placeholder="Your name">
+    <input type="tel" name="phone_no" placeholder="Telephone number">
+</form>

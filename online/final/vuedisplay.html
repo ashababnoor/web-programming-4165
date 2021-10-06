@@ -1,0 +1,63 @@
+{% extends 'apptservice/base.html' %}
+
+{% block body %} 
+	<script src="https://unpkg.com/vue"></script>
+			
+		<div class="ui basic loading segment" id="app">
+			{% for m in messages %}
+			  <p class="ui green message">{{ m }}</p>
+			{% endfor %}
+
+		
+		<div class="ui fluid card" v-for="p in posts">
+		  <div class="content">
+		  	
+		    <div class="header">
+		    	<i class="small circular user icon"></i>
+		    	<% p.author_id %>
+		    </div>
+		    <div class="meta"><% p.date %></div>
+		    <div class="description">
+		      <p><% p.content %></p>
+		    </div>
+		  </div>
+		  <div class="extra right aligned content">
+		    <i class="tag icon"></i>
+		    <% p.tag %>
+		  </div>
+		</div>
+		
+		</div>
+
+<div id="app">
+    <ol>
+        <li v-for="d in doctors"> <% d %> </li>
+    </ol>
+</div>
+
+
+<script src="https://unpkg.com/vue"></script>
+<script type="text/javascript">
+    let app = new Vue({
+        el: '#app',
+        delimiters: ['<%', '%>'],
+        data: {
+            doctors : []
+        },
+        methods: {
+        populate: function(){
+            fetch("http://localhost/api/doctors")
+                .then(response => response.json())
+                .then(data => {
+                    this.doctors = data;
+                });
+            }
+        },
+        created: function(){
+            this.populate();
+        }
+    });
+</script>
+
+{% endblock body %} 
+
