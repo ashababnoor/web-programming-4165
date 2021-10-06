@@ -1,0 +1,26 @@
+{% extends 'facebook2/base.html' %}
+
+{% block body %} 
+	<!-- Rendered from base.html -->
+	<div class="ui text container">
+	{% for p in posts %}
+	<div class="ui fluid card">
+	  <div class="content">
+	    <div class="header">
+	    	<i class="small circular user icon"></i>
+	    	{{ p.author }}
+	    </div>
+	    <div class="meta">{{ p.date }}</div>
+	    <div class="description">
+	      <p>{{ p.content }}</p>
+	    </div>
+	  </div>
+	  <div class="extra right aligned content">
+	    <i class="tag icon"></i>
+	    {{ p.tag }}
+	  </div>
+	</div>
+	{% endfor %}
+	</div>
+{% endblock body %} 
+

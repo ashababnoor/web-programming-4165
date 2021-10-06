@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Facebook2 {% block title %} {% endblock title %} </title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+	<link rel="stylesheet" href="{% static 'facebook2/mystyle.css' %}">
+</head>
+<body>
+	<div class="ui secondary menu" id="topbar">
+	  <div class="header item" id="logo">
+	    Facebook2
+	  </div>
+
+	  <div class="ui right secondary menu">
+	  	<a class="item" href="{% url 'profile-page' %}">
+		    Profile
+		  </a>
+		  <a class="item" href="{% url 'signout' %}">
+		    Sign Out
+		  </a>
+		  
+	  </div>
+	</div>
+
+	{% block body %} {% endblock body %} 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>
